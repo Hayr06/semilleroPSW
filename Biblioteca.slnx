@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Biblioteca/Biblioteca.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Biblioteca.Tests/Biblioteca.Tests.csproj" />
+  </Folder>
+</Solution>
