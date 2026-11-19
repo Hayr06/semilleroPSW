@@ -30,6 +30,19 @@ public sealed class Alumno
 
     public Resultado PedirLibro(string titulo, DateOnly hoy)
     {
+        // RN-301: diccionarios y enciclopedias no se prestan
+        var tituloLower = titulo.ToLowerInvariant();
+        if (tituloLower.Contains("diccionario") || tituloLower.Contains("enciclopedia"))
+        {
+            return Resultado.Rechazo("Los diccionarios y enciclopedias son de consulta interna");
+        }
+
+        // RN-302: no repetir el mismo libro
+        if (_prestamos.Any(p => string.Equals(p.Titulo, titulo, StringComparison.OrdinalIgnoreCase)))
+        {
+            return Resultado.Rechazo("Ya tienes este libro prestado");
+        }
+
         // RN-001: máximo 3 libros prestados al mismo tiempo.
         if (_prestamos.Count >= 3)
         {
