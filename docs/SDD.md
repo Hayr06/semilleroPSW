@@ -42,9 +42,9 @@ Ejemplo: "Rayuela" está prestado a Luis; Carlos lo aparta; la reserva se crea e
 **RN-402 · Libro apartado no se renueva.** Si un libro tiene apartado activo, el alumno que lo tiene prestado no puede renovarlo.
 Ejemplo: "Rayuela" tiene un apartado; Luis intenta renovarlo; se rechaza con "El libro está apartado".
 
-### Párrafo 5 (IDs RN-501, RN-502)
+### Párrafo 5 (IDs RN-501)
 
-<!-- La pareja del párrafo 5 escribe aquí sus reglas. -->
+**RN-501 · Nuevo ingreso.** Durante su primer mes en la escuela, un alumno de nuevo ingreso solo puede tener 1 libro prestado. Ejemplo: Luis es nuevo ingreso; tiene 1 libro; pide "Rayuela"; se rechaza.
 
 ## Criterios de aceptación
 
@@ -53,7 +53,7 @@ Dado que Ana tiene 3 préstamos activos,
 cuando pide otro libro,
 entonces se rechaza con "Ya tienes 3 libros prestados".
 
-<!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... -->
+<!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... AC-601, AC-602... próximamente -->
 
 **AC-401 · verifica RN-401.** Dado que "Rayuela" está prestado a Luis, cuando Carlos intenta apartarlo, entonces la reserva se registra correctamente.
 
