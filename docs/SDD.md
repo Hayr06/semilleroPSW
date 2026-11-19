@@ -42,6 +42,10 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 
 <!-- La pareja del párrafo 5 escribe aquí sus reglas. -->
 
+### Parrafo 6 (IDs RN-501, RN-502)
+
+<!-- La pareja del párrafo 6 escribe aquí sus reglas. -->
+
 ## Criterios de aceptación
 
 **AC-007 · verifica RN-001.**
