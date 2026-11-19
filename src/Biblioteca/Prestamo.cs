@@ -13,4 +13,7 @@ public sealed class Prestamo
     public DateOnly FechaInicio { get; set; }
 
     public bool Apartado { get; set; }
+
+    public DateOnly FechaExpiracion()
+        => FechaInicio.AddDays(7);
 }

@@ -29,6 +29,18 @@ public class PrestamosTests
     }
 
     [Fact]
+    [Trait("RN", "RN-101")]
+    public void RN101_duracion_del_prestamo_es_7_dias()
+    {
+        var fecha = new DateOnly(2026, 11, 19);
+        var prestamo = new Prestamo("El Principito", fecha);
+
+        var expiracion = prestamo.FechaExpiracion();
+
+        Assert.Equal(new DateOnly(2026, 11, 26), expiracion);
+    }
+
+    [Fact]
     [Trait("RN", "RN-301")]
     public void RN301_rechaza_prestamo_diccionario()
     {
