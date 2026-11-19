@@ -28,6 +28,44 @@ public class PrestamosTests
         Assert.Equal(3, ana.Prestamos.Count);
     }
 
+    [Fact]
+    [Trait("RN", "RN-301")]
+    public void RN301_rechaza_prestamo_diccionario()
+    {
+        var ana = Alumno.ConPrestamos(1);
+
+        var r = ana.PedirLibro("Diccionario de la Lengua Española");
+
+        Assert.False(r.Exito);
+        Assert.Equal("Los diccionarios y enciclopedias son de consulta interna", r.Mensaje);
+        Assert.Single(ana.Prestamos);
+    }
+
+    [Fact]
+    [Trait("RN", "RN-301")]
+    public void RN301_rechaza_prestamo_enciclopedia()
+    {
+        var ana = Alumno.ConPrestamos(1);
+
+        var r = ana.PedirLibro("Enciclopedia Universal");
+
+        Assert.False(r.Exito);
+        Assert.Equal("Los diccionarios y enciclopedias son de consulta interna", r.Mensaje);
+        Assert.Single(ana.Prestamos);
+    }
+
+    [Fact]
+    [Trait("RN", "RN-302")]
+    public void RN302_rechaza_prestamo_duplicado()
+    {
+        var ana = Alumno.ConPrestamos(1);
+
+        var r = ana.PedirLibro("Libro 1");
+
+        Assert.False(r.Exito);
+        Assert.Equal("Ya tienes este libro prestado", r.Mensaje);
+        Assert.Single(ana.Prestamos);
+    }
     // AC-501 verifica RN-501: alumno de nuevo ingreso solo puede tener 1 libro.
     [Fact]
     [Trait("RN", "RN-501")]
@@ -39,7 +77,7 @@ public class PrestamosTests
 
         Assert.False(r.Exito);
         Assert.Equal("Los alumnos de nuevo ingreso solo pueden tener 1 libro prestado", r.Mensaje);
-        Assert.Equal(1, luis.Prestamos.Count);
+        Assert.Single(luis.Prestamos);
     }
 
     [Fact]
@@ -51,7 +89,7 @@ public class PrestamosTests
         var r = luis.PedirLibro("Rayuela");
 
         Assert.True(r.Exito);
-        Assert.Equal(1, luis.Prestamos.Count);
+        Assert.Single(luis.Prestamos);
     }
 
     [Fact]
@@ -76,5 +114,58 @@ public class PrestamosTests
 
         Assert.True(r.Exito);
         Assert.Equal(2, luis.Prestamos.Count);
+    }
+
+    // RN-401: apartar un libro prestado.
+    [Fact]
+    [Trait("RN", "RN-401")]
+    public void RN401_puede_apartar_libro_prestado()
+    {
+        var ana = Alumno.ConPrestamo("Rayuela", new DateOnly(2026, 11, 19));
+
+        var r = Alumno.ApartarLibro(ana.Prestamos, "Rayuela");
+
+        Assert.True(r.Exito);
+        var prestamo = Assert.Single(ana.Prestamos);
+        Assert.True(prestamo.Apartado);
+    }
+
+    [Fact]
+    [Trait("RN", "RN-401")]
+    public void RN401_no_se_puede_apartar_libro_no_prestado()
+    {
+        var ana = Alumno.ConPrestamos(1);
+
+        var r = Alumno.ApartarLibro(ana.Prestamos, "Rayuela");
+
+        Assert.False(r.Exito);
+        Assert.Equal("No hay préstamo activo para este libro", r.Mensaje);
+    }
+
+    // RN-402: libro apartado no se renueva.
+    [Fact]
+    [Trait("RN", "RN-402")]
+    public void RN402_no_se_puede_renovar_libro_apartado()
+    {
+        var ana = Alumno.ConPrestamo("Rayuela", new DateOnly(2026, 11, 19));
+
+        var apartar = Alumno.ApartarLibro(ana.Prestamos, "Rayuela");
+        Assert.True(apartar.Exito);
+
+        var r = ana.RenovarLibro("Rayuela", new DateOnly(2026, 11, 25));
+
+        Assert.False(r.Exito);
+        Assert.Equal("El libro está apartado", r.Mensaje);
+    }
+
+    [Fact]
+    [Trait("RN", "RN-402")]
+    public void RN402_se_puede_renovar_libro_no_apartado()
+    {
+        var ana = Alumno.ConPrestamo("Rayuela", new DateOnly(2026, 11, 19));
+
+        var r = ana.RenovarLibro("Rayuela", new DateOnly(2026, 11, 25));
+
+        Assert.True(r.Exito);
     }
 }
