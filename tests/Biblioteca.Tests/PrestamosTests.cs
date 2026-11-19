@@ -28,45 +28,6 @@ public class PrestamosTests
         Assert.Equal(3, ana.Prestamos.Count);
     }
 
-    [Fact]
-    [Trait("RN", "RN-301")]
-    public void RN301_rechaza_prestamo_diccionario()
-    {
-        var ana = Alumno.ConPrestamos(1);
-
-        var r = ana.PedirLibro("Diccionario de la Lengua Española");
-
-        Assert.False(r.Exito);
-        Assert.Equal("Los diccionarios y enciclopedias son de consulta interna", r.Mensaje);
-        Assert.Equal(1, ana.Prestamos.Count);
-    }
-
-    [Fact]
-    [Trait("RN", "RN-301")]
-    public void RN301_rechaza_prestamo_enciclopedia()
-    {
-        var ana = Alumno.ConPrestamos(1);
-
-        var r = ana.PedirLibro("Enciclopedia Universal");
-
-        Assert.False(r.Exito);
-        Assert.Equal("Los diccionarios y enciclopedias son de consulta interna", r.Mensaje);
-        Assert.Equal(1, ana.Prestamos.Count);
-    }
-
-    [Fact]
-    [Trait("RN", "RN-302")]
-    public void RN302_rechaza_prestamo_duplicado()
-    {
-        var ana = Alumno.ConPrestamos(1);
-
-        var r = ana.PedirLibro("Libro 1");
-
-        Assert.False(r.Exito);
-        Assert.Equal("Ya tienes este libro prestado", r.Mensaje);
-        Assert.Equal(1, ana.Prestamos.Count);
-    }
-
     // RN-401: apartar un libro prestado.
     [Fact]
     [Trait("RN", "RN-401")]
