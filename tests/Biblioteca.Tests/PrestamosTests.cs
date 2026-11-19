@@ -38,7 +38,7 @@ public class PrestamosTests
 
         Assert.False(r.Exito);
         Assert.Equal("Los diccionarios y enciclopedias son de consulta interna", r.Mensaje);
-        Assert.Equal(1, ana.Prestamos.Count);
+        Assert.Single(ana.Prestamos);
     }
 
     [Fact]
@@ -51,7 +51,7 @@ public class PrestamosTests
 
         Assert.False(r.Exito);
         Assert.Equal("Los diccionarios y enciclopedias son de consulta interna", r.Mensaje);
-        Assert.Equal(1, ana.Prestamos.Count);
+        Assert.Single(ana.Prestamos);
     }
 
     [Fact]
@@ -64,9 +64,8 @@ public class PrestamosTests
 
         Assert.False(r.Exito);
         Assert.Equal("Ya tienes este libro prestado", r.Mensaje);
-        Assert.Equal(1, ana.Prestamos.Count);
+        Assert.Single(ana.Prestamos);
     }
-
     // AC-501 verifica RN-501: alumno de nuevo ingreso solo puede tener 1 libro.
     [Fact]
     [Trait("RN", "RN-501")]
