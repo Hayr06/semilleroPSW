@@ -42,7 +42,7 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 
 ### Párrafo 5 (IDs RN-501, RN-502)
 
-<!-- La pareja del párrafo 5 escribe aquí sus reglas. -->
+**RN-501 · Nuevo ingreso.** Durante su primer mes en la escuela, un alumno de nuevo ingreso solo puede tener 1 libro prestado. Ejemplo: Luis es nuevo ingreso; tiene 1 libro; pide "Rayuela"; se rechaza.
 
 ## Criterios de aceptación
 
@@ -60,6 +60,11 @@ entonces se rechaza con "Los diccionarios y enciclopedias son de consulta intern
 Dado que Ana ya tiene "El Principito" prestado,
 cuando intenta pedir "El Principito" de nuevo,
 entonces se rechaza con "Ya tienes este libro prestado".
+
+**AC-501 · verifica RN-501.**
+Dado que Luis es alumno de nuevo ingreso y ya tiene 1 libro prestado,
+cuando pide otro libro,
+entonces se rechaza con "Los alumnos de nuevo ingreso solo pueden tener 1 libro prestado".
 
 <!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... -->
 
