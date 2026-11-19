@@ -38,7 +38,11 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 
 ### Párrafo 4 (IDs RN-401, RN-402)
 
-<!-- La pareja del párrafo 4 escribe aquí sus reglas. -->
+**RN-401 · Apartar un libro prestado.** Si un libro está prestado a otro alumno, otro puede apartarlo para cuando lo devuelvan.
+Ejemplo: "Rayuela" está prestado a Luis; Carlos lo aparta; la reserva se crea exitosamente.
+
+**RN-402 · Libro apartado no se renueva.** Si un libro tiene apartado activo, el alumno que lo tiene prestado no puede renovarlo.
+Ejemplo: "Rayuela" tiene un apartado; Luis intenta renovarlo; se rechaza con "El libro está apartado".
 
 ### Párrafo 5 (IDs RN-501, RN-502)
 
@@ -67,6 +71,10 @@ cuando pide otro libro,
 entonces se rechaza con "Los alumnos de nuevo ingreso solo pueden tener 1 libro prestado".
 
 <!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... -->
+
+**AC-401 · verifica RN-401.** Dado que "Rayuela" está prestado a Luis, cuando Carlos intenta apartarlo, entonces la reserva se registra correctamente.
+
+**AC-402 · verifica RN-402.** Dado que "Rayuela" tiene un apartado activo, cuando Luis intenta renovarlo, entonces se rechaza con "El libro está apartado".
 
 ## Historias de usuario
 
