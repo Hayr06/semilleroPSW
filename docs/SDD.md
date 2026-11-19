@@ -28,7 +28,9 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 
 ### Párrafo 2 (IDs RN-201, RN-202)
 
-<!-- La pareja del párrafo 2 escribe aquí sus reglas. -->
+**RN-201 · Multa por día de retraso.** Si un libro se devuelve tarde, se cobra una multa de 5 pesos por cada día de retraso. Ejemplo: Ana devuelve "El Principito" 3 días tarde → multa de 15 pesos.
+
+**RN-202 · Impedimento por deuda.** Mientras un alumno deba una multa, no puede pedir otro libro. Ejemplo: Ana debe 15 pesos → se rechaza su nuevo préstamo con "Debes una multa".
 
 ### Párrafo 3 (IDs RN-301, RN-302)
 
@@ -49,7 +51,11 @@ Dado que Ana tiene 3 préstamos activos,
 cuando pide otro libro,
 entonces se rechaza con "Ya tienes 3 libros prestados".
 
-<!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... -->
+**AC-201 · Calcula multa por días de retraso.** Dado que la fecha de devolución es 3 días después de la fecha de vencimiento (inicio + 7 días), cuando se devuelve un libro, entonces la multa es de 15 pesos.
+
+**AC-202 · Sin multa si se devuelve a tiempo.** Dado que la fecha de devolución es igual a la fecha de vencimiento, cuando se devuelve un libro, entonces la multa es de 0 pesos.
+
+**AC-203 · Impide prestar si debe multa.** Dado que un alumno debe una multa, cuando pide otro libro, entonces se rechaza con "Debes una multa".
 
 ## Historias de usuario
 
