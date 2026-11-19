@@ -10,7 +10,5 @@ public sealed class Prestamo
 
     public string Titulo { get; }
 
-    public DateOnly FechaInicio { get; set; }
-
-    public bool Apartado { get; set; }
+    public DateOnly FechaInicio { get; }
 }
