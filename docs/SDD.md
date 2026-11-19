@@ -24,7 +24,9 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 
 ### Párrafo 1 (IDs RN-101, RN-102)
 
-<!-- La pareja del párrafo 1 escribe aquí sus reglas. -->
+**RN-101 · Duración del préstamo.** Un préstamo dura 7 días naturales desde el día en que se pide. Ejemplo: Ana pide "El Principito" el 2026-11-19; el préstamo expira el 2026-11-26.
+
+**RN-102 · Renovación.** Un préstamo se puede renovar por 7 días adicionales, pero solo una vez. Ejemplo: "El Principito" pedido el 2026-11-19 se puede renovar hasta el 2026-12-03, pero no una segunda vez.
 
 ### Párrafo 2 (IDs RN-201, RN-202)
 
@@ -54,6 +56,16 @@ Ejemplo: "Rayuela" tiene un apartado; Luis intenta renovarlo; se rechaza con "El
 Dado que Ana tiene 3 préstamos activos,
 cuando pide otro libro,
 entonces se rechaza con "Ya tienes 3 libros prestados".
+
+**AC-101 · verifica RN-101.**
+Dado que se pide un libro el 2026-11-19,
+cuando se consulta la fecha de expiración,
+entonces es 2026-11-26.
+
+**AC-102 · verifica RN-102.**
+Dado que un préstamo del 2026-11-19 se renovó una vez,
+cuando intenta renovarse de nuevo,
+entonces se rechaza con "Este préstamo ya fue renovado una vez".
 
 **AC-301 · verifica RN-301.**
 Dado que un alumno quiere pedir "Diccionario de la Lengua Española",
