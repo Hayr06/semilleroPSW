@@ -32,7 +32,9 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 
 ### Párrafo 3 (IDs RN-301, RN-302)
 
-<!-- La pareja del párrafo 3 escribe aquí sus reglas. -->
+**RN-301 · Libros de consulta interna.** Los diccionarios y las enciclopedias no se prestan, solo se leen en la biblioteca. Ejemplo: "Diccionario de la Lengua Española" no se puede prestar.
+
+**RN-302 · No se repite libro.** Un alumno no puede tener prestado dos veces el mismo libro. Ejemplo: Ana ya tiene "El Principito"; no puede pedirlo otra vez.
 
 ### Párrafo 4 (IDs RN-401, RN-402)
 
@@ -48,6 +50,16 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 Dado que Ana tiene 3 préstamos activos,
 cuando pide otro libro,
 entonces se rechaza con "Ya tienes 3 libros prestados".
+
+**AC-301 · verifica RN-301.**
+Dado que un alumno quiere pedir "Diccionario de la Lengua Española",
+cuando intenta pedirlo,
+entonces se rechaza con "Los diccionarios y enciclopedias son de consulta interna".
+
+**AC-302 · verifica RN-302.**
+Dado que Ana ya tiene "El Principito" prestado,
+cuando intenta pedir "El Principito" de nuevo,
+entonces se rechaza con "Ya tienes este libro prestado".
 
 <!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... -->
 
