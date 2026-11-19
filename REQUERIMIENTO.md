@@ -19,3 +19,5 @@ libro apartado ya no se puede renovar.
 
 **Párrafo 5. Nuevo ingreso.** Durante su primer mes en la escuela, un alumno de nuevo ingreso solo puede tener
 1 libro prestado.
+
+**Párrafo 6. Libros perdidos** Al momento que un alumno pierde un libro, se le multa con 300 pesos con la posibilidad de pagar de contado o semanalmente. Mientras un alumno deba una multa, no puede pedir otro libro.
