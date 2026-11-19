@@ -71,7 +71,28 @@ Dado que Ana tiene una multa con deuda restante,
 cuando intenta pedir un libro,
 entonces se rechaza con "Tienes una multa pendiente".
 
-<!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... -->
+**AC-301 · verifica RN-301.**
+Dado que un alumno quiere pedir "Diccionario de la Lengua Española",
+cuando intenta pedirlo,
+entonces se rechaza con "Los diccionarios y enciclopedias son de consulta interna".
+
+**AC-302 · verifica RN-302.**
+Dado que Ana ya tiene "El Principito" prestado,
+cuando intenta pedir "El Principito" de nuevo,
+entonces se rechaza con "Ya tienes este libro prestado".
+
+**AC-501 · verifica RN-501.**
+Dado que Luis es alumno de nuevo ingreso y ya tiene 1 libro prestado,
+cuando pide otro libro,
+entonces se rechaza con "Los alumnos de nuevo ingreso solo pueden tener 1 libro prestado".
+
+**AC-401 · verifica RN-401.**
+Dado que "Rayuela" está prestado a Luis, cuando Carlos intenta apartarlo, entonces la reserva se registra correctamente.
+
+**AC-402 · verifica RN-402.**
+Dado que "Rayuela" tiene un apartado activo, cuando Luis intenta renovarlo, entonces se rechaza con "El libro está apartado".
+
+<!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... AC-601, AC-602... próximamente -->
 
 ## Historias de usuario
 
