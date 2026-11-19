@@ -42,12 +42,34 @@ Ejemplo: Ana tiene 3; pide "El Principito"; se rechaza.
 
 <!-- La pareja del párrafo 5 escribe aquí sus reglas. -->
 
+### Párrafo 6 (IDs RN-601, RN-602)
+
+**RN-601 · Multa por pérdida.** Al momento que un alumno pierde un libro, se le multa con 300 pesos con la posibilidad de pagar de contado o semanalmente.
+Ejemplo: Ana pierde "Cien Años de Soledad"; se le registra una multa de 300 pesos; paga 100 de contado; le quedan 200 pendientes.
+
+**RN-602 · Deuda impide nuevo préstamo.** Mientras un alumno deba una multa, no puede pedir otro libro.
+Ejemplo: Ana debe 200 de multa; intenta pedir "1984"; se rechaza con "Tienes una multa pendiente".
+
 ## Criterios de aceptación
 
 **AC-007 · verifica RN-001.**
 Dado que Ana tiene 3 préstamos activos,
 cuando pide otro libro,
 entonces se rechaza con "Ya tienes 3 libros prestados".
+
+**AC-601 · verifica RN-601.**
+Dado que Ana pierde el libro "Cien Años de Soledad" con fecha 2026-01-15,
+entonces se crea una multa de 300 pesos para Ana.
+
+**AC-602 · verifica RN-601.**
+Dado que existe una multa de 300 pesos,
+cuando Ana paga 100,
+entonces la deuda restante es 200.
+
+**AC-603 · verifica RN-602.**
+Dado que Ana tiene una multa con deuda restante,
+cuando intenta pedir un libro,
+entonces se rechaza con "Tienes una multa pendiente".
 
 <!-- Cada pareja agrega aquí sus criterios con el mismo número de párrafo: AC-101, AC-102, AC-201... -->
 
